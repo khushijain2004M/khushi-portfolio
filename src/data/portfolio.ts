@@ -54,11 +54,11 @@ export const expertise: ExpertiseItem[] = [
 ];
 
 export const projects: Project[] = [
-  { id: 'portfolio', index: '01', title: 'Personal Portfolio', subtitle: 'React • TypeScript', description: 'A responsive personal portfolio with an accessible interface, animated sections and reusable content architecture.', longDescription: 'This portfolio is being refined as a personal space for verified projects, skills and learning milestones.', preview: 'shop', image: null, technologies: ['React', 'TypeScript', 'Tailwind CSS'], features: ['Responsive Design', 'Accessible Navigation', 'Project Showcase', 'Theme Controls'], demoUrl: null, githubUrl: null, accent: 'cyan' },
-  { id: 'task-planner', index: '02', title: 'Task Planner', subtitle: 'Work in Progress', description: 'A focused productivity tool for organizing tasks, priorities and daily progress.', longDescription: 'The project is currently being designed and will be published with complete source code and a live demo.', preview: 'distributed', image: null, technologies: ['TypeScript', 'React', 'Local Storage'], features: ['Task Management', 'Priority Filters', 'Progress Overview'], demoUrl: null, githubUrl: null, accent: 'purple' },
-  { id: 'learning-dashboard', index: '03', title: 'Learning Dashboard', subtitle: 'Work in Progress', description: 'A learning tracker for courses, skills, notes and weekly goals.', longDescription: 'This project is in progress. Verified repository and demo links will be added after completion.', preview: 'chat', image: null, technologies: ['JavaScript', 'CSS', 'Data Visualization'], features: ['Learning Goals', 'Skill Progress', 'Weekly Review'], demoUrl: null, githubUrl: null, accent: 'magenta' },
+  { id: 'fitwithkhushi', index: '01', title: 'FitWithKhushi', subtitle: 'React • Node.js', description: 'An AI-assisted fitness workspace for workout planning, hydration, nutrition and progress tracking.', longDescription: 'A full-stack fitness experience with private accounts, structured workout tools, progress views and an interactive coaching interface.', preview: 'shop', image: null, technologies: ['React', 'Node.js', 'Express', 'MongoDB'], features: ['Workout Planning', 'Fitness Dashboard', 'AI Coach Interface', 'Progress Tracking'], demoUrl: null, githubUrl: 'https://github.com/khushijain2004M/FitWithKhushi', accent: 'cyan' },
+  { id: 'axiom', index: '02', title: 'AXIOM', subtitle: 'TypeScript • Full Stack', description: 'A growth-intelligence workspace that turns product signals into ranked, reviewable recommendations.', longDescription: 'A multi-surface product intelligence system featuring analytics, evidence-backed recommendations and human approval workflows.', preview: 'distributed', image: null, technologies: ['TypeScript', 'Next.js', 'Python', 'Electron'], features: ['Growth Analytics', 'Decision Support', 'Desktop & Mobile Clients', 'Human Review'], demoUrl: null, githubUrl: 'https://github.com/khushijain2004M/AXIOM', accent: 'purple' },
+  { id: 'air-pointer', index: '03', title: 'Air Pointer', subtitle: 'JavaScript • Computer Vision', description: 'A gesture-driven pointer experience for browser demonstrations and desktop interaction experiments.', longDescription: 'A cross-platform interaction project with an on-page cursor demo and a desktop application architecture for gesture-based control.', preview: 'chat', image: null, technologies: ['JavaScript', 'Electron', 'Computer Vision'], features: ['Gesture Input', 'Interactive Demo', 'Desktop Integration', 'Configurable Controls'], demoUrl: null, githubUrl: 'https://github.com/khushijain2004M/Air-Pointer', accent: 'magenta' },
 ];
-export const projectsCopy = { heading: 'Projects in Progress', subheading: 'Original projects will appear here with verified source code and live demos as they are completed.' };
+export const projectsCopy = { heading: 'Featured Projects', subheading: 'Explore Khushi’s growing collection of full-stack, intelligent and interactive software projects.' };
 
 const comingSoon = (prefix: 'small' | 'mini', label: string) => Array.from({ length: 10 }, (_, index) => ({ id: `${prefix}-${index + 1}`, index: String(index + 1).padStart(2, '0'), title: `${label} ${String(index + 1).padStart(2, '0')}`, description: 'Work in progress — repository and live demo will be added after completion.', status: 'coming-soon' as const, technologies: ['Work in Progress'], demoUrl: null, githubUrl: null }));
 export const projectCollections: ProjectCollection[] = [
@@ -70,7 +70,7 @@ export const stats: Stat[] = [
   { id: 'st-1', value: null, display: 'WIP', label: 'LeetCode', caption: 'Profile work in progress', icon: 'target', accent: 'cyan', placeholder: true },
   { id: 'st-2', value: null, display: 'WIP', label: 'HackerRank', caption: 'Profile work in progress', icon: 'star', accent: 'purple', placeholder: true },
   { id: 'st-3', value: projects.length, label: 'Projects', caption: 'Currently being developed', icon: 'trophy', accent: 'magenta', placeholder: true },
-  { id: 'st-4', value: 0, label: 'Public Repositories', caption: 'GitHub setup in progress', icon: 'boxes', accent: 'blue', placeholder: true },
+  { id: 'st-4', value: 4, label: 'Public Repositories', caption: 'Connected on GitHub', icon: 'boxes', accent: 'blue', placeholder: false },
 ];
 export const badges: Badge[] = [];
 
@@ -81,7 +81,7 @@ export const platforms: CodingPlatform[] = [
 ];
 
 export const githubActivity: GitHubActivity = { seed: 20261009, weeks: 0, totals: [
-  { id: 'ga-1', label: 'Repositories', value: 0, icon: 'folderGit', accent: 'cyan' },
+  { id: 'ga-1', label: 'Repositories', value: 4, icon: 'folderGit', accent: 'cyan' },
   { id: 'ga-2', label: 'Profile Stars', value: 0, icon: 'star', accent: 'purple' },
   { id: 'ga-3', label: 'Followers', value: 0, icon: 'activity', accent: 'magenta' },
   { id: 'ga-4', label: 'Projects in Progress', value: projects.length, icon: 'boxes', accent: 'blue' },

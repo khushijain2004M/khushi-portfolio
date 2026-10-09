@@ -32,15 +32,15 @@ export function Contact() {
           <GlassCard variant="panel" radiusClass="rounded-3xl" className="h-full">
             <div className="flex h-full flex-col justify-between p-6 sm:p-8">
               <div>
-                <span className="rounded-full border border-dashed border-brand-cyan/30 bg-brand-cyan/[0.06] px-3 py-1 font-display text-[0.55rem] font-semibold tracking-[0.18em] text-brand-cyan uppercase">Setup in progress</span>
-                <h3 className="mt-5 font-display text-xl font-semibold text-paper">GitHub connection coming next</h3>
-                <p className="mt-3 max-w-xl text-[0.85rem] leading-relaxed text-muted">Repositories and a verified contact link will be added after Khushi&apos;s exact GitHub username is connected. No unverified personal details are published.</p>
+                <span className="rounded-full border border-brand-cyan/30 bg-brand-cyan/[0.06] px-3 py-1 font-display text-[0.55rem] font-semibold tracking-[0.18em] text-brand-cyan uppercase">GitHub connected</span>
+                <h3 className="mt-5 font-display text-xl font-semibold text-paper">Explore the project repositories</h3>
+                <p className="mt-3 max-w-xl text-[0.85rem] leading-relaxed text-muted">Khushi&apos;s verified GitHub profile now hosts the portfolio and featured project repositories. Other contact profiles remain unpublished until verified.</p>
               </div>
               <div className="mt-8 flex items-center gap-3 border-t border-white/[0.07] pt-5">
                 <span className="relative flex size-2.5"><span className="anim-pulse-ring absolute inline-flex size-full rounded-full bg-emerald-400/70" /><span className="relative inline-flex size-2.5 rounded-full bg-emerald-400" /></span>
                 <p className="font-display text-[0.68rem] font-semibold tracking-[0.16em] text-emerald-100/90 uppercase">{personal.availability}</p>
               </div>
-              <div className="mt-4 flex gap-2.5">{socials.map((social) => <span key={social.id} title={`${social.label} setup in progress`} className="inline-flex size-11 cursor-not-allowed items-center justify-center rounded-xl border border-dashed border-white/12 text-faint"><Icon name={social.icon} className="size-4" /></span>)}</div>
+              <div className="mt-4 flex gap-2.5">{socials.map((social) => social.url ? <a key={social.id} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="glass inline-flex size-11 items-center justify-center rounded-xl text-muted transition-colors hover:border-brand-cyan/40 hover:text-brand-cyan"><Icon name={social.icon} className="size-4" /></a> : <span key={social.id} className="inline-flex size-11 cursor-not-allowed items-center justify-center rounded-xl border border-dashed border-white/12 text-faint"><Icon name={social.icon} className="size-4" /></span>)}</div>
             </div>
           </GlassCard>
         </Reveal>
