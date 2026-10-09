@@ -38,19 +38,24 @@ export const aboutHighlights: AboutHighlight[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: 'HTML & CSS', category: 'Web Foundations', level: 72, tech: 'javascript', accent: 'cyan' },
-  { name: 'JavaScript', category: 'Learning & Building', level: 62, tech: 'javascript', accent: 'purple' },
-  { name: 'TypeScript', category: 'Currently Learning', level: 45, tech: 'javascript', accent: 'blue' },
-  { name: 'React', category: 'Currently Learning', level: 48, tech: 'react', accent: 'cyan' },
-  { name: 'C++', category: 'Programming Fundamentals', level: 50, tech: 'cpp', accent: 'blue' },
-  { name: 'Git & GitHub', category: 'Version Control', level: 55, tech: 'git', accent: 'magenta' },
+  { name: 'HTML & CSS', category: 'Web Foundations', level: 85, tech: 'javascript', accent: 'cyan' },
+  { name: 'JavaScript', category: 'Web Development', level: 78, tech: 'javascript', accent: 'purple' },
+  { name: 'TypeScript', category: 'Typed JavaScript', level: 68, tech: 'javascript', accent: 'blue' },
+  { name: 'C++', category: 'Programming & DSA', level: 60, tech: 'cpp', accent: 'blue' },
+  { name: 'React', category: 'Currently Learning', level: 55, tech: 'react', accent: 'cyan' },
+  { name: 'Node.js', category: 'Currently Learning', level: 48, tech: 'node', accent: 'purple' },
+  { name: 'Next.js', category: 'Currently Learning', level: 40, tech: 'react', accent: 'magenta' },
+  { name: 'Git & GitHub', category: 'Version Control', level: 70, tech: 'git', accent: 'purple' },
+  { name: 'Python & Java', category: 'Familiar', level: 32, tech: 'python', accent: 'cyan' },
 ];
 
 export const expertise: ExpertiseItem[] = [
-  { id: 'ex-1', lines: ['Programming', 'Fundamentals'], icon: 'binary', accent: 'cyan' },
-  { id: 'ex-2', lines: ['Responsive', 'Interfaces'], icon: 'globe', accent: 'blue' },
-  { id: 'ex-3', lines: ['Object Oriented', 'Programming'], icon: 'boxes', accent: 'purple' },
-  { id: 'ex-4', lines: ['Version', 'Control'], icon: 'workflow', accent: 'magenta' },
+  { id: 'ex-1', lines: ['Data Structures', '& Algorithms'], icon: 'binary', accent: 'cyan' },
+  { id: 'ex-2', lines: ['Database', 'Management'], icon: 'database', accent: 'blue' },
+  { id: 'ex-3', lines: ['Operating', 'Systems'], icon: 'cpu', accent: 'purple' },
+  { id: 'ex-4', lines: ['Object Oriented', 'Programming'], icon: 'boxes', accent: 'magenta' },
+  { id: 'ex-5', lines: ['Web', 'Development'], icon: 'globe', accent: 'cyan' },
+  { id: 'ex-6', lines: ['Software', 'Engineering'], icon: 'workflow', accent: 'purple' },
 ];
 
 export const projects: Project[] = [
@@ -60,10 +65,34 @@ export const projects: Project[] = [
 ];
 export const projectsCopy = { heading: 'Featured Projects', subheading: 'Explore Khushi’s growing collection of full-stack, intelligent and interactive software projects.' };
 
-const comingSoon = (prefix: 'small' | 'mini', label: string) => Array.from({ length: 10 }, (_, index) => ({ id: `${prefix}-${index + 1}`, index: String(index + 1).padStart(2, '0'), title: `${label} ${String(index + 1).padStart(2, '0')}`, description: 'Work in progress — repository and live demo will be added after completion.', status: 'coming-soon' as const, technologies: ['Work in Progress'], demoUrl: null, githubUrl: null }));
+const miniProjectNames = [
+  'Weather App', 'Password Generator', 'Form Validation', 'Stopwatch App', 'Digital Piano',
+  'Tip Calculator', 'Expense Tracker', 'Movie Search App', 'Flashcard Learning App', 'Typing Speed Test',
+  'Drum Kit', 'QR Code Generator', 'Currency Converter', 'Image Gallery Modal', 'Theme Toggle',
+  'Scroll Progress Bar', 'Clipboard Copy Tool', 'Text-to-Speech Converter', 'Product Filter List', 'Music Player',
+  'Kanban Task Board', 'Pomodoro Focus Timer', 'Habit Streak Tracker', 'Markdown Notes Editor', 'Color Gradient Studio',
+  'JSON Formatter', 'Unit Converter', 'Memory Match Game', 'Image Compressor', 'Decision Wheel',
+  'CodeForge Academy', 'Frontend Quality Inspector', 'Interview Mastery Hub', 'NovaUI Framework', 'Developer Journey Roadmap',
+] as const;
+const miniProjectSlugs = [
+  '01-weather-app', '02-password-generator', '03-form-validation', '04-stopwatch-app', '05-digital-piano',
+  '06-tip-calculator', '07-expense-tracker', '08-movie-search-app', '09-flashcard-learning-app', '10-typing-speed-test',
+  '11-drum-kit', '12-qr-code-generator', '13-currency-converter', '14-image-gallery-modal', '15-light-dark-mode-toggle',
+  '16-scroll-progress-bar', '17-clipboard-copy-tool', '18-text-to-speech-converter', '19-product-filter-list', '20-music-player-app',
+  '21-kanban-task-board', '22-pomodoro-focus-timer', '23-habit-streak-tracker', '24-markdown-notes-editor', '25-color-gradient-studio',
+  '26-json-formatter-validator', '27-unit-converter', '28-memory-match-game', '29-image-compressor-resizer', '30-decision-wheel',
+  '31-codeforge-academy', '32-frontend-quality-inspector', '33-interview-mastery-hub', '34-novaui-framework', '35-developer-journey-roadmap',
+] as const;
+const collectionItems = miniProjectNames.map((title, index) => ({
+  id: miniProjectSlugs[index], index: String(index + 1).padStart(2, '0'), title,
+  description: 'An interactive, responsive web project with polished UI and practical functionality.',
+  status: 'published' as const, technologies: index >= 30 ? ['TypeScript', 'HTML', 'CSS'] : ['JavaScript', 'HTML', 'CSS'],
+  demoUrl: null,
+  githubUrl: `https://github.com/khushijain2004M/mini-projects/tree/main/${miniProjectSlugs[index]}`,
+}));
 export const projectCollections: ProjectCollection[] = [
-  { id: 'small-projects', eyebrow: 'Learning Builds', title: 'Small Projects', description: 'Focused practice projects currently in progress.', icon: 'puzzle', accent: 'cyan', items: comingSoon('small', 'Small Project') },
-  { id: 'mini-projects', eyebrow: 'Compact Products', title: 'Mini Projects', description: 'Complete mini products will be published here after verification.', icon: 'layers', accent: 'purple', items: comingSoon('mini', 'Mini Project') },
+  { id: 'small-projects', eyebrow: 'Learning Builds', title: 'Small Projects', description: 'Fifteen focused projects covering core browser APIs and practical JavaScript.', icon: 'puzzle', accent: 'cyan', items: collectionItems.slice(0, 15) },
+  { id: 'mini-projects', eyebrow: 'Compact Products', title: 'Mini Projects', description: 'Twenty feature-rich tools, games and learning products with published source code.', icon: 'layers', accent: 'purple', items: collectionItems.slice(15) },
 ];
 
 export const stats: Stat[] = [
@@ -89,8 +118,8 @@ export const githubActivity: GitHubActivity = { seed: 20261009, weeks: 0, totals
 
 export const activityCopy = { heading: 'Coding Activity', subheading: 'GitHub activity will appear after the profile and repositories are connected.', heatmapTitle: 'GitHub Setup in Progress' };
 export const achievementsCopy = { heading: 'Learning Progress', subheading: 'LeetCode and HackerRank profiles are currently work in progress.' };
-export const skillsCopy = { heading: 'My Digital Skillset', subheading: 'Technologies I am learning and using to build practical projects.' };
-export const expertiseCopy = { heading: 'Core Expertise', subheading: 'The fundamentals supporting my development journey.' };
+export const skillsCopy = { heading: 'My Digital Skillset', subheading: 'Technologies I use to transform ideas into functional digital experiences.' };
+export const expertiseCopy = { heading: 'Core IT Expertise', subheading: 'The computer-science fundamentals behind everything I build.' };
 export const contactCopy = { heading: "Let's Connect", subheading: 'The verified GitHub profile will be the primary contact and project destination.' };
 export const contactChannels: ContactChannel[] = [
   { id: 'cc-github', label: 'GitHub', value: '@khushijain2004M', href: 'https://github.com/khushijain2004M', icon: 'github', accent: 'cyan' },
