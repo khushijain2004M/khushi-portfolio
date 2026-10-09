@@ -1,0 +1,29 @@
+{
+  "name": "khushi-jain-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Futuristic developer portfolio for Khushi Jain — React, TypeScript, Vite, Tailwind CSS and Framer Motion",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && vite build",
+    "sync:profiles": "node scripts/sync-profile-stats.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "framer-motion": "^13.1.1",
+    "lucide-react": "^1.33.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.3",
+    "vite": "^8.2.2"
+  }
+}

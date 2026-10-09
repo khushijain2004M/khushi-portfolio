@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#02050A" />
+
+    <title>Khushi Jain — Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Khushi Jain, a student and aspiring software engineer building thoughtful web projects."
+    />
+    <meta name="author" content="Khushi Jain" />
+    <meta
+      name="keywords"
+      content="Khushi Jain, portfolio, student developer, software engineer, web development, React, TypeScript"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- %SITE_URL% is filled from VITE_SITE_URL at build time (see vite.config.ts) -->
+    <link rel="canonical" href="%SITE_URL%/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Khushi Jain — Portfolio" />
+    <meta property="og:title" content="Khushi Jain — Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Khushi Jain's learning journey, skills and projects in progress."
+    />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <!-- Replace with a 1200x630 PNG for maximum crawler compatibility -->
+    <meta property="og:image" content="%SITE_URL%/og-image.svg" />
+    <meta property="og:image:alt" content="Khushi Jain — futuristic developer portfolio" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Khushi Jain — Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore Khushi Jain's learning journey, skills and projects in progress."
+    />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.svg" />
+    <!-- <meta name="twitter:site" content="@yourhandle" /> -->
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Hero brain artwork is the largest paint on the page — fetch it early -->
+    <link rel="preload" as="image" href="/neural-brain-v2.png" fetchpriority="high" />
+
+    <!-- Fonts: Space Grotesk (headings) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data (schema.org Person) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Khushi Jain",
+        "url": "%SITE_URL%/",
+        "jobTitle": "Student Developer | Aspiring Software Engineer",
+        "description": "Student developer focused on web development, problem solving and software-engineering fundamentals.",
+        "knowsAbout": [
+          "Software Development",
+          "Data Structures and Algorithms",
+          "Full Stack Web Development",
+          "Databases",
+          "Operating Systems"
+        ]
+      }
+    </script>
+    <!--
+      Add your real profile URLs to the structured data above once you have them,
+      as a "sameAs" array alongside "alumniOf":
+
+        "sameAs": ["https://github.com/<you>", "https://www.linkedin.com/in/<you>"]
+
+      It is left out on purpose — publishing placeholder profile URLs would tell
+      search engines about accounts that are not yours.
+    -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; color: #f8fafc; background: #030512; font-family: system-ui, sans-serif">
+        <h1>Khushi Jain — Student Developer &amp; Aspiring Software Engineer</h1>
+        <p>This portfolio needs JavaScript enabled.</p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
