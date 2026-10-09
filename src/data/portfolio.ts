@@ -114,9 +114,9 @@ export const githubActivity: GitHubActivity = { seed: 20261009, weeks: 0, totals
   { id: 'ga-2', label: 'Profile Stars', value: 0, icon: 'star', accent: 'purple' },
   { id: 'ga-3', label: 'Followers', value: 0, icon: 'activity', accent: 'magenta' },
   { id: 'ga-4', label: 'Projects in Progress', value: projects.length, icon: 'boxes', accent: 'blue' },
-], placeholder: true };
+], placeholder: false };
 
-export const activityCopy = { heading: 'Coding Activity', subheading: 'GitHub activity will appear after the profile and repositories are connected.', heatmapTitle: 'GitHub Setup in Progress' };
+export const activityCopy = { heading: 'Coding Activity', subheading: 'Live repository statistics from Khushi’s public GitHub profile.', heatmapTitle: 'GitHub Repository Activity' };
 export const achievementsCopy = { heading: 'Learning Progress', subheading: 'LeetCode and HackerRank profiles are currently work in progress.' };
 export const skillsCopy = { heading: 'My Digital Skillset', subheading: 'Technologies I use to transform ideas into functional digital experiences.' };
 export const expertiseCopy = { heading: 'Core IT Expertise', subheading: 'The computer-science fundamentals behind everything I build.' };

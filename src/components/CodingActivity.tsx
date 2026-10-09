@@ -411,11 +411,11 @@ export function CodingActivity() {
                     {activityCopy.heatmapTitle}
                   </h3>
                   <p className="mt-1 max-w-2xl text-[0.75rem] leading-relaxed text-faint">
-                    GitHub profile and verified repositories are currently being prepared.
+                    Public repository totals are synced directly from Khushi&apos;s GitHub profile.
                   </p>
                 </div>
                 <span className="font-display text-[0.62rem] font-semibold tracking-[0.14em] text-brand-cyan uppercase">
-                  Work in progress
+                  Live profile
                 </span>
               </div>
             )}
