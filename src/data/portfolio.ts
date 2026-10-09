@@ -104,15 +104,14 @@ export const stats: Stat[] = [
 export const badges: Badge[] = [];
 
 export const platforms: CodingPlatform[] = [
-  { id: 'leetcode', name: 'LeetCode', handle: 'Work in Progress', url: null, icon: 'terminal', accent: 'cyan', rank: 'Profile setup in progress', stats: [{ label: 'Status', value: 'WIP' }], trend: Array(12).fill(0), placeholder: true },
-  { id: 'hackerrank', name: 'HackerRank', handle: 'Work in Progress', url: null, icon: 'braces', accent: 'purple', rank: 'Profile setup in progress', stats: [{ label: 'Status', value: 'WIP' }], trend: Array(12).fill(0), placeholder: true },
-  { id: 'github', name: 'GitHub', handle: '@khushijain2004M', url: 'https://github.com/khushijain2004M', icon: 'github', accent: 'magenta', rank: 'Portfolio repository setup', stats: [{ label: 'Status', value: 'Connected' }], trend: Array(12).fill(0), placeholder: false },
+  { id: 'leetcode', name: 'LeetCode', handle: '@KhushiJain', url: null, icon: 'terminal', accent: 'cyan', rank: 'Global rank #3,221,316', stats: [{ label: 'Solved', value: '39' }, { label: 'Acceptance', value: '98%' }, { label: 'Submissions', value: '47' }], trend: [8, 8, 8, 8, 8, 8, 25, 25, 25, 55, 72, 90], placeholder: false },
+  { id: 'hackerrank', name: 'HackerRank', handle: '@khushijain', url: null, icon: 'braces', accent: 'purple', rank: 'Top 1% • 6★ problem solving', stats: [{ label: 'Solved', value: '77' }, { label: 'Stars', value: '6★' }, { label: 'Global rank', value: '#40,792' }], trend: [32, 35, 38, 42, 46, 50, 55, 61, 66, 72, 78, 84], placeholder: false },
+  { id: 'github', name: 'GitHub', handle: '@khushijain2004M', url: 'https://github.com/khushijain2004M', icon: 'github', accent: 'magenta', rank: 'Building in public', stats: [{ label: 'Repos', value: '5' }, { label: 'Stars', value: '4' }], trend: [32, 32, 34, 38, 42, 47, 53, 58, 65, 72, 82, 92], placeholder: false },
 ];
 
 export const githubActivity: GitHubActivity = { seed: 20261009, weeks: 0, totals: [
   { id: 'ga-1', label: 'Repositories', value: 4, icon: 'folderGit', accent: 'cyan' },
   { id: 'ga-2', label: 'Profile Stars', value: 0, icon: 'star', accent: 'purple' },
-  { id: 'ga-3', label: 'Followers', value: 0, icon: 'activity', accent: 'magenta' },
   { id: 'ga-4', label: 'Projects in Progress', value: projects.length, icon: 'boxes', accent: 'blue' },
 ], placeholder: false };
 

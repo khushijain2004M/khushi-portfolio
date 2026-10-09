@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Check, ExternalLink, X } from 'lucide-react';
 import { useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 import { useLockBodyScroll } from '../hooks/useLockBodyScroll';
 import { accent as accentMap } from '../lib/accents';
@@ -25,7 +26,9 @@ export function ProjectModal({ project, onClose, onUnavailable }: ProjectModalPr
   useLockBodyScroll(open);
   useFocusTrap(panelRef, open, onClose);
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <AnimatePresence>
       {project && (
         <div className="fixed inset-0 z-[130] flex items-end justify-center p-0 sm:items-center sm:p-6">
@@ -168,5 +171,5 @@ export function ProjectModal({ project, onClose, onUnavailable }: ProjectModalPr
         </div>
       )}
     </AnimatePresence>
-  );
+  , document.body);
 }

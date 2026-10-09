@@ -54,14 +54,17 @@ export function ProjectCollectionCard({ collection, onOpen }: ProjectCollectionC
           <span className="rounded-full border border-dashed border-white/10 px-2.5 py-1 text-[0.62rem] text-faint">+{Math.max(collection.items.length - 4, 0)} more</span>
         </div>
 
-        <div className="mt-6 grid grid-cols-5 gap-2.5">
+        <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
           {collection.items.map((item, index) => (
             <span
               key={item.id}
-              className="collection-preview-node relative aspect-square overflow-hidden rounded-lg border"
+              className="collection-preview-node relative min-h-12 overflow-hidden rounded-lg border px-2 py-2"
               style={{ '--node-color': previewColors[index % previewColors.length], '--node-delay': `${index * 80}ms` } as CSSProperties}
             >
-              <span className="absolute inset-[3px] grid place-items-center rounded-[5px] bg-white/[0.025] font-display text-[0.58rem] font-bold text-paper/65" title={item.title}>{item.index}</span>
+              <span className="relative flex items-center gap-1.5 font-display text-[0.56rem] font-semibold leading-tight text-paper/80" title={item.title}>
+                <b className="shrink-0 text-[0.52rem] text-[var(--node-color)]">{item.index}</b>
+                <span className="truncate">{item.title}</span>
+              </span>
             </span>
           ))}
         </div>
