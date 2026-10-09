@@ -123,7 +123,7 @@ function PlatformCard({
             ))}
           </dl>
 
-          <div className="mt-5">
+          {platform.id === 'github' && platform.url && <div className="mt-5">
             <NeonButton
               size="sm"
               variant="outline"
@@ -137,7 +137,7 @@ function PlatformCard({
             >
               Visit profile
             </NeonButton>
-          </div>
+          </div>}
         </div>
       </GlassCard>
     </Reveal>
@@ -365,6 +365,16 @@ export function CodingActivity() {
   const heatmap = useHeatmap(githubActivity.weeks, liveStats.github.contributions);
   const notifyUnavailable = (hint: string) =>
     push({ title: 'Profile not linked', description: hint, variant: 'info' });
+  const displayPlatforms = platforms.map((platform) => platform.id === 'github' ? {
+    ...platform,
+    rank: 'Building in public',
+    stats: [
+      { label: 'Repos', value: String(liveStats.github.repositories) },
+      { label: 'Stars', value: String(liveStats.github.stars) },
+      { label: 'Followers', value: String(liveStats.github.followers) },
+    ],
+    trend: [8, 10, 12, 15, 18, 24, 28, 36, 44, 52, 65, 78],
+  } : platform);
 
   return (
     <Section id="activity" labelledBy="activity-heading">
@@ -377,7 +387,7 @@ export function CodingActivity() {
 
       {/* Platforms */}
       <ul className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-        {platforms.map((platform, index) => (
+        {displayPlatforms.map((platform, index) => (
           <li key={platform.id} className="h-full">
             <PlatformCard platform={platform} index={index} onUnavailable={notifyUnavailable} />
           </li>
@@ -385,7 +395,7 @@ export function CodingActivity() {
       </ul>
 
       <p className="mt-3 text-right text-[0.62rem] leading-relaxed text-faint">
-        LeetCode, HackerRank and GitHub are marked Work in Progress until verified profiles are connected.
+        GitHub data is synced from Khushi&apos;s public profile. LeetCode and HackerRank remain Work in Progress.
       </p>
 
       {/* Heatmap + totals */}
@@ -417,7 +427,7 @@ export function CodingActivity() {
                     total={total}
                     index={index}
                     // Keep the tile and the grid above telling the same story.
-                    valueOverride={undefined}
+                    valueOverride={total.label === 'Repositories' ? liveStats.github.repositories : total.label === 'Profile Stars' ? liveStats.github.stars : total.label === 'Followers' ? liveStats.github.followers : undefined}
                   />
                 </li>
               ))}

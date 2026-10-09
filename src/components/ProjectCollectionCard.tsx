@@ -47,14 +47,21 @@ export function ProjectCollectionCard({ collection, onOpen }: ProjectCollectionC
         <h3 className="mt-2 font-display text-xl font-semibold text-paper sm:text-2xl">{collection.title}</h3>
         <p className="mt-3 max-w-xl text-[0.86rem] leading-relaxed text-muted">{collection.description}</p>
 
-        <div aria-hidden="true" className="mt-7 grid grid-cols-5 gap-2.5">
+        <div className="mt-5 flex flex-wrap gap-2">
+          {collection.items.slice(0, 4).map((item) => (
+            <span key={item.id} className="rounded-full border border-white/10 bg-white/[0.035] px-2.5 py-1 text-[0.62rem] text-paper/75">{item.title}</span>
+          ))}
+          <span className="rounded-full border border-dashed border-white/10 px-2.5 py-1 text-[0.62rem] text-faint">+{Math.max(collection.items.length - 4, 0)} more</span>
+        </div>
+
+        <div className="mt-6 grid grid-cols-5 gap-2.5">
           {collection.items.map((item, index) => (
             <span
               key={item.id}
               className="collection-preview-node relative aspect-square overflow-hidden rounded-lg border"
               style={{ '--node-color': previewColors[index % previewColors.length], '--node-delay': `${index * 80}ms` } as CSSProperties}
             >
-              <span className="absolute inset-[3px] rounded-[5px] bg-white/[0.025]" />
+              <span className="absolute inset-[3px] grid place-items-center rounded-[5px] bg-white/[0.025] font-display text-[0.58rem] font-bold text-paper/65" title={item.title}>{item.index}</span>
             </span>
           ))}
         </div>
