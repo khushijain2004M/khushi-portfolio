@@ -60,7 +60,7 @@ export const expertise: ExpertiseItem[] = [
 
 export const projects: Project[] = [
   { id: 'fitwithkhushi', index: '01', title: 'FitWithKhushi', subtitle: 'React • Node.js', description: 'An AI-assisted fitness workspace for workout planning, hydration, nutrition and progress tracking.', longDescription: 'A full-stack fitness experience with private accounts, structured workout tools, progress views and an interactive coaching interface.', preview: 'shop', image: `${import.meta.env.BASE_URL}project-fitwithkhushi.png`, technologies: ['React', 'Node.js', 'Express', 'MongoDB'], features: ['Workout Planning', 'Fitness Dashboard', 'AI Coach Interface', 'Progress Tracking'], demoUrl: 'https://khushijain2004m.github.io/FitWithKhushi/', githubUrl: 'https://github.com/khushijain2004M/FitWithKhushi', accent: 'cyan' },
-  { id: 'axiom', index: '02', title: 'AXIOM', subtitle: 'TypeScript • Full Stack', description: 'A growth-intelligence workspace that turns product signals into ranked, reviewable recommendations.', longDescription: 'A multi-surface product intelligence system featuring analytics, evidence-backed recommendations and human approval workflows.', preview: 'distributed', image: `${import.meta.env.BASE_URL}project-axiom.png`, technologies: ['TypeScript', 'Next.js', 'Python', 'Electron'], features: ['Growth Analytics', 'Decision Support', 'Desktop & Mobile Clients', 'Human Review'], demoUrl: 'https://axiom-v1.sudeshmehar3.workers.dev/', githubUrl: 'https://github.com/khushijain2004M/AXIOM', accent: 'purple' },
+  { id: 'axiom', index: '02', title: 'AXIOM', subtitle: 'TypeScript • Full Stack', description: 'A growth-intelligence workspace that turns product signals into ranked, reviewable recommendations.', longDescription: 'A multi-surface product intelligence system featuring analytics, evidence-backed recommendations and human approval workflows.', preview: 'distributed', image: `${import.meta.env.BASE_URL}project-axiom.png`, technologies: ['TypeScript', 'Next.js', 'Python', 'Electron'], features: ['Growth Analytics', 'Decision Support', 'Desktop & Mobile Clients', 'Human Review'], demoUrl: null, githubUrl: 'https://github.com/khushijain2004M/AXIOM', accent: 'purple' },
   { id: 'air-pointer', index: '03', title: 'Air Pointer', subtitle: 'JavaScript • Computer Vision', description: 'A gesture-driven pointer experience for browser demonstrations and desktop interaction experiments.', longDescription: 'A cross-platform interaction project with an on-page cursor demo and a desktop application architecture for gesture-based control.', preview: 'chat', image: `${import.meta.env.BASE_URL}project-air-pointer.png`, technologies: ['JavaScript', 'Electron', 'Computer Vision'], features: ['Gesture Input', 'Interactive Demo', 'Desktop Integration', 'Configurable Controls'], demoUrl: 'https://khushijain2004m.github.io/Air-Pointer/', githubUrl: 'https://github.com/khushijain2004M/Air-Pointer', accent: 'magenta' },
 ];
 export const projectsCopy = { heading: 'Featured Projects', subheading: 'Explore Khushi’s growing collection of full-stack, intelligent and interactive software projects.' };
@@ -84,15 +84,15 @@ const miniProjectSlugs = [
   '31-codeforge-academy', '32-frontend-quality-inspector', '33-interview-mastery-hub', '34-novaui-framework', '35-developer-journey-roadmap',
 ] as const;
 const collectionItems = miniProjectNames.map((title, index) => ({
-  id: miniProjectSlugs[index], index: String(index + 1).padStart(2, '0'), title,
+  id: miniProjectSlugs[index], index: String(index + 1).padStart(2, '0'), title: title.toUpperCase(),
   description: 'An interactive, responsive web project with polished UI and practical functionality.',
   status: 'published' as const, technologies: index >= 30 ? ['TypeScript', 'HTML', 'CSS'] : ['JavaScript', 'HTML', 'CSS'],
   demoUrl: `https://khushijain2004m.github.io/mini-projects/${miniProjectSlugs[index]}/`,
-  githubUrl: `https://github.com/khushijain2004M/mini-projects/tree/main/${miniProjectSlugs[index]}`,
+  githubUrl: `https://github.com/khushijain2004M/KJ-${String(index + 1).padStart(2, '0')}-${miniProjectSlugs[index].slice(3).toUpperCase()}`,
 }));
 export const projectCollections: ProjectCollection[] = [
-  { id: 'small-projects', eyebrow: 'Learning Builds', title: 'Small Projects', description: 'Fifteen focused projects covering core browser APIs and practical JavaScript.', icon: 'puzzle', accent: 'cyan', items: collectionItems.slice(0, 15) },
-  { id: 'mini-projects', eyebrow: 'Compact Products', title: 'Mini Projects', description: 'Twenty feature-rich tools, games and learning products with published source code.', icon: 'layers', accent: 'purple', items: collectionItems.slice(15) },
+  { id: 'small-projects', eyebrow: 'LEARNING BUILDS', title: 'PROJECT COLLECTION 01', description: 'Fifteen focused web projects covering core browser APIs and practical JavaScript.', icon: 'puzzle', accent: 'cyan', items: collectionItems.slice(0, 15) },
+  { id: 'mini-projects', eyebrow: 'COMPACT PRODUCTS', title: 'PROJECT COLLECTION 02', description: 'Twenty feature-rich tools, games and learning products with published source code.', icon: 'layers', accent: 'purple', items: collectionItems.slice(15) },
 ];
 
 export const stats: Stat[] = [
