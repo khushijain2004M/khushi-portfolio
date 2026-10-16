@@ -61,7 +61,7 @@ export function ProjectCollectionModal({ collection, onClose }: ProjectCollectio
             exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.985 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="collection-modal glass-panel relative z-10 max-h-[94dvh] w-full max-w-5xl touch-pan-y overflow-y-auto overscroll-contain rounded-3xl"
-            style={{ '--modal-accent': collection.id === 'small-projects' ? '#00f0ff' : '#a855f7' } as CSSProperties}
+            style={{ '--modal-accent': collection.id === 'collection-one' ? '#00f0ff' : '#a855f7' } as CSSProperties}
           >
             <span aria-hidden="true" className="collection-modal-glow pointer-events-none absolute -top-36 left-1/2 h-72 w-3/4 -translate-x-1/2 rounded-full" />
             <div className="sticky top-0 z-20 flex items-start justify-between gap-5 border-b border-white/[0.07] bg-ink/90 p-5 backdrop-blur-xl sm:p-7">

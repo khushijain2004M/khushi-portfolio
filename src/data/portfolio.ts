@@ -65,7 +65,7 @@ export const projects: Project[] = [
 ];
 export const projectsCopy = { heading: 'Featured Projects', subheading: 'Explore Khushi’s growing collection of full-stack, intelligent and interactive software projects.' };
 
-const miniProjectNames = [
+const projectNames = [
   'Weather App', 'Password Generator', 'Form Validation', 'Stopwatch App', 'Digital Piano',
   'Tip Calculator', 'Expense Tracker', 'Movie Search App', 'Flashcard Learning App', 'Typing Speed Test',
   'Drum Kit', 'QR Code Generator', 'Currency Converter', 'Image Gallery Modal', 'Theme Toggle',
@@ -74,7 +74,7 @@ const miniProjectNames = [
   'JSON Formatter', 'Unit Converter', 'Memory Match Game', 'Image Compressor', 'Decision Wheel',
   'CodeForge Academy', 'Frontend Quality Inspector', 'Interview Mastery Hub', 'NovaUI Framework', 'Developer Journey Roadmap',
 ] as const;
-const miniProjectSlugs = [
+const projectSlugs = [
   '01-weather-app', '02-password-generator', '03-form-validation', '04-stopwatch-app', '05-digital-piano',
   '06-tip-calculator', '07-expense-tracker', '08-movie-search-app', '09-flashcard-learning-app', '10-typing-speed-test',
   '11-drum-kit', '12-qr-code-generator', '13-currency-converter', '14-image-gallery-modal', '15-light-dark-mode-toggle',
@@ -83,16 +83,16 @@ const miniProjectSlugs = [
   '26-json-formatter-validator', '27-unit-converter', '28-memory-match-game', '29-image-compressor-resizer', '30-decision-wheel',
   '31-codeforge-academy', '32-frontend-quality-inspector', '33-interview-mastery-hub', '34-novaui-framework', '35-developer-journey-roadmap',
 ] as const;
-const collectionItems = miniProjectNames.map((title, index) => ({
-  id: miniProjectSlugs[index], index: String(index + 1).padStart(2, '0'), title: title.toUpperCase(),
+const collectionItems = projectNames.map((title, index) => ({
+  id: projectSlugs[index], index: String(index + 1).padStart(2, '0'), title: title.toUpperCase(),
   description: 'An interactive, responsive web project with polished UI and practical functionality.',
   status: 'published' as const, technologies: index >= 30 ? ['TypeScript', 'HTML', 'CSS'] : ['JavaScript', 'HTML', 'CSS'],
-  demoUrl: `https://khushijain2004m.github.io/mini-projects/${miniProjectSlugs[index]}/`,
-  githubUrl: `https://github.com/khushijain2004M/KJ-${String(index + 1).padStart(2, '0')}-${miniProjectSlugs[index].slice(3).toUpperCase()}`,
+  demoUrl: `https://khushijain2004m.github.io/WEB-PROJECTS/${projectSlugs[index]}/`,
+  githubUrl: `https://github.com/khushijain2004M/KJ-${String(index + 1).padStart(2, '0')}-${projectSlugs[index].slice(3).toUpperCase()}`,
 }));
 export const projectCollections: ProjectCollection[] = [
-  { id: 'small-projects', eyebrow: 'LEARNING BUILDS', title: 'PROJECT COLLECTION 01', description: 'Fifteen focused web projects covering core browser APIs and practical JavaScript.', icon: 'puzzle', accent: 'cyan', items: collectionItems.slice(0, 15) },
-  { id: 'mini-projects', eyebrow: 'COMPACT PRODUCTS', title: 'PROJECT COLLECTION 02', description: 'Twenty feature-rich tools, games and learning products with published source code.', icon: 'layers', accent: 'purple', items: collectionItems.slice(15) },
+  { id: 'collection-one', eyebrow: 'LEARNING BUILDS', title: 'PROJECT COLLECTION 01', description: 'Fifteen focused web projects covering core browser APIs and practical JavaScript.', icon: 'puzzle', accent: 'cyan', items: collectionItems.slice(0, 15) },
+  { id: 'collection-two', eyebrow: 'COMPACT PRODUCTS', title: 'PROJECT COLLECTION 02', description: 'Twenty feature-rich tools, games and learning products with published source code.', icon: 'layers', accent: 'purple', items: collectionItems.slice(15) },
 ];
 
 export const stats: Stat[] = [
