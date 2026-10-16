@@ -13,7 +13,7 @@ interface ProjectCollectionCardProps {
 
 export function ProjectCollectionCard({ collection, onOpen }: ProjectCollectionCardProps) {
   const tone = accentMap[collection.accent];
-  const collectionColors = collection.id === 'collection-one'
+  const collectionColors = collection.id === 'small-projects'
     ? { primary: '#00f0ff', secondary: '#ff3bd4' }
     : { primary: '#a855f7', secondary: '#e11d48' };
   const colorStyle = {

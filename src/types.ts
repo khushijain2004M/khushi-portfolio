@@ -167,7 +167,7 @@ export interface ProjectCollectionItem {
 }
 
 export interface ProjectCollection {
-  id: 'collection-one' | 'collection-two';
+  id: 'small-projects' | 'mini-projects';
   eyebrow: string;
   title: string;
   description: string;
